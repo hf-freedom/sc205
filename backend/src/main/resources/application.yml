@@ -1,0 +1,23 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: parking-management
+  mvc:
+    cors:
+      mappings:
+        /api/**:
+          allowed-origins: "http://localhost:3006"
+          allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+          allowed-headers: "*"
+          allow-credentials: true
+
+parking:
+  config:
+    free-minutes: 30
+    hourly-rate: 5
+    daily-cap: 50
+    monthly-card-price: 300
+    reservation-timeout-minutes: 30
+    long-stay-threshold-hours: 24
